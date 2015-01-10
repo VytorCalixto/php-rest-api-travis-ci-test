@@ -15,7 +15,7 @@ class Library
     $data = (object)array(
       'error' => false,
       'message' => 'Test response.',
-      'code' => 200
+      'code' => 202
     );
     return json_encode($data);
   }
@@ -23,7 +23,7 @@ class Library
   public function testApi()
   {
     http_response_code($data->code);
-    header('Contnet-type: application/json; charset=utf-8');
+    header('Content-type: application/json; charset=utf-8');
     echo $this->jsonData();
   }
 }
