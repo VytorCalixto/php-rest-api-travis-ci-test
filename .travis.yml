@@ -12,8 +12,8 @@ before_script:
   - pecl install uri_template || echo 'Error installing uri_template'
   - composer self-update
   - composer install --no-interaction --prefer-source --dev
-  - ~/.nvm/nvm.sh install v0.6.14
-  - ~/.nvm/nvm.sh run v0.6.14
+  # ~/.nvm/nvm.sh install v0.6.14
+  # ~/.nvm/nvm.sh run v0.6.14
   - sudo apt-get install apache2 libapache2-mod-fastcgi
 
   # enable php-fpm
@@ -31,7 +31,6 @@ script: phpunit
 
 matrix:
   allow_failures:
-    - php: 5.3
   fast_finish: true
 
 notifications:
