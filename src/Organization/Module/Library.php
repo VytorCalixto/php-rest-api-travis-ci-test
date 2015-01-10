@@ -23,8 +23,10 @@ class Library
   {
     $data = $this->data;
 
-    http_response_code($data->code);
-    header('Contnet-type: application/json; charset=utf-8');
+    // http_response_code($data->code);
+    // in cases when http_response_code fails to set the value we can use:
+    header('X-HTTP-Response-Code: '.$data->code, true, $data->code);
+    header('Content-Type: application/json; charset=utf-8');
     echo json_encode($data);
   }
 }
