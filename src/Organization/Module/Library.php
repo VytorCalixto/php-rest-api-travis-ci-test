@@ -5,26 +5,26 @@ namespace Organization\Module;
 class Library
 {
   protected $method;
+  protected $data;
 
-  public function __construct() {
-    $this->method = 'GET';
-  }
-
-  public function jsonData($inData = null)
+  public function __construct()
   {
-    $data = (object)array(
+    $this->method = 'GET';
+
+    // setting some dummy response data
+    $this->data = (object)array(
       'error' => false,
       'message' => 'Test response.',
       'code' => 202
     );
-    return json_encode($data);
   }
 
-  public function testApi()
+  public function genericTestApi()
   {
-    header('Content-type: application/json; charset=utf-8');
+    $data = $this->data;
+
     http_response_code($data->code);
-    header('X-HTTP-Response-code: '.$data->code, true, $data->code);
-    echo $this->jsonData();
+    header('Contnet-type: application/json; charset=utf-8');
+    echo json_encode($data);
   }
 }

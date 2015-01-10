@@ -15,13 +15,16 @@ class LibraryTest extends PHPUnit_Framework_TestCase
     ]);
   }
 
+  /*
+  // basic unit testing
   public function testLibrary()
   {
     $example = new Library();
-    $data = json_decode($example->jsonData());
-    $this->assertEquals(202, $data->code);
+    $this->assertEquals('some value', $example->someMethod());
   }
+  */
 
+  // API testing
   public function testApiResponse()
   {
     $response = $this->client->get('/');
@@ -32,6 +35,6 @@ class LibraryTest extends PHPUnit_Framework_TestCase
     $this->assertEquals(202, $response->getStatusCode());
 
     /* check for content type */
-    //$this->assertEquals('application/json', $response->getHeader('content-type'));
+    $this->assertEquals('application/json', $response->getHeader('content-type'));
   }
 }
