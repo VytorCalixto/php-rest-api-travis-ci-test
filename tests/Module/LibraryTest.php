@@ -1,4 +1,4 @@
-  <?php
+<?php
 
 use \Organization\Module\Library;
 use \GuzzleHttp\Client;
@@ -10,7 +10,7 @@ class LibraryTest extends PHPUnit_Framework_TestCase
   protected function setUp()
   {
     $this->client = new Client([
-      'base_url' => 'http://localhost',
+      'base_url' => 'http://localhost/php-rest-api-travis-ci/',
       'defaults' => ['exceptions' => false]
     ]);
   }
@@ -27,8 +27,12 @@ class LibraryTest extends PHPUnit_Framework_TestCase
   // API testing
   public function testApiResponse()
   {
-    $response = $this->client->get('/');
+    $response = $this->client->get('index.php');
 
+    //* ******** compare server headers ********* *//
+    // $example = new Library();
+    // fwrite(STDERR, $example->genericTestApi());
+    //* ******** ********************** ********* *//
     fwrite(STDERR, print_r($response, TRUE));
 
     /* check for response code */
