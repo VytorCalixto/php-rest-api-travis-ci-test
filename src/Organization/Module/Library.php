@@ -22,7 +22,7 @@ class Library
 
   public function testApi()
   {
-    http_response_code($data->code);
+    //http_response_code($data->code);
     header('Content-type: application/json; charset=utf-8', true, $data->code);
     echo $this->jsonData();
   }
