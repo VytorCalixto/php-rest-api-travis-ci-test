@@ -1,0 +1,21 @@
+{
+    "name": "mturjak/travis-test",
+    "description": "Example repo of CI in PHP based REST APIs.",
+    "keywords": ["travis", "rest"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Turjak",
+            "email": "mturjak@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "4.4.*",
+        "guzzlehttp/guzzle": "5.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Organization": "src/"
+        }
+    }
+}
