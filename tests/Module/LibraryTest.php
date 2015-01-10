@@ -13,15 +13,13 @@ class LibraryTest extends PHPUnit_Framework_TestCase
       'base_url' => 'http://localhost',
       'defaults' => ['exceptions' => false]
     ]);
-
-    fwrite(STDERR, var_dump($this->client, TRUE));
   }
 
   public function testLibrary()
   {
     $example = new Library();
     $data = json_decode($example->jsonData());
-    $this->assertEquals(202, $data->code);
+    $this->assertEquals(200, $data->code);
   }
 
   public function testApiResponse()
@@ -29,9 +27,9 @@ class LibraryTest extends PHPUnit_Framework_TestCase
     $response = $this->client->get('/');
 
     /* check for response code */
-    $this->assertEquals(202, $response->getStatusCode());
+    $this->assertEquals(200, $response->getStatusCode());
 
-    fwrite(STDERR, var_dump($response, TRUE));
+    fwrite(STDERR, print_r($response, TRUE));
 
     /* check for content type */
     //$this->assertEquals('application/json', $response->getHeader('content-type'));
