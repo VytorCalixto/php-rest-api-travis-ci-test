@@ -26,10 +26,10 @@ class LibraryTest extends PHPUnit_Framework_TestCase
   {
     $response = $this->client->get('/');
 
+    fwrite(STDERR, print_r($response, TRUE));
+
     /* check for response code */
     $this->assertEquals(202, $response->getStatusCode());
-
-    fwrite(STDERR, print_r($response, TRUE));
 
     /* check for content type */
     //$this->assertEquals('application/json', $response->getHeader('content-type'));
