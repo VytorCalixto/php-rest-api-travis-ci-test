@@ -10,7 +10,7 @@ class LibraryTest extends PHPUnit_Framework_TestCase
   protected function setUp()
   {
     $this->client = new Client([
-      'base_url' => 'http://localhost:8888/php-rest-api-travis-ci-test/',
+      'base_url' => 'http://localhost/php-rest-api-travis-ci-test/',
       'defaults' => ['exceptions' => false]
     ]);
   }
