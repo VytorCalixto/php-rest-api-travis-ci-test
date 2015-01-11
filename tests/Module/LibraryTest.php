@@ -33,6 +33,8 @@ class LibraryTest extends PHPUnit_Framework_TestCase
     // $example = new Library();
     // fwrite(STDERR, $example->genericTestApi());
     //* ******** ********************** ********* *//
+    fwrite(STDERR, print_r($response->getStatusCode(), TRUE));
+    fwrite(STDERR, print_r($response->getHeader('content-type'), TRUE));
     fwrite(STDERR, print_r($response->getBody()->read(1024), TRUE));
 
     /* check for response code */
