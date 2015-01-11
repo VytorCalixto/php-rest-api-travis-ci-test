@@ -15,7 +15,7 @@ class Library
     $this->data = (object)array(
       'error' => false,
       'message' => 'Test response.',
-      'code' => 200
+      'code' => 202
     );
   }
 
